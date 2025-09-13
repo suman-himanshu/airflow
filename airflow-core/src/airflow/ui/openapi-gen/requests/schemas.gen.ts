@@ -3599,7 +3599,7 @@ export const $HITLDetail = {
                 }
             ]
         },
-        response_at: {
+        responded_at: {
             anyOf: [
                 {
                     type: 'string',
@@ -3609,7 +3609,7 @@ export const $HITLDetail = {
                     type: 'null'
                 }
             ],
-            title: 'Response At'
+            title: 'Responded At'
         },
         chosen_options: {
             anyOf: [
@@ -3667,10 +3667,10 @@ export const $HITLDetailResponse = {
         responded_by: {
             '$ref': '#/components/schemas/HITLUser'
         },
-        response_at: {
+        responded_at: {
             type: 'string',
             format: 'date-time',
-            title: 'Response At'
+            title: 'Responded At'
         },
         chosen_options: {
             items: {
@@ -3687,7 +3687,7 @@ export const $HITLDetailResponse = {
         }
     },
     type: 'object',
-    required: ['responded_by', 'response_at', 'chosen_options'],
+    required: ['responded_by', 'responded_at', 'chosen_options'],
     title: 'HITLDetailResponse',
     description: 'Response of updating a Human-in-the-loop detail.'
 } as const;
