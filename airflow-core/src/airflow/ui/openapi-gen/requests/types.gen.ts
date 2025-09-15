@@ -2617,6 +2617,7 @@ export type GetMappedTaskInstancesData = {
     logicalDateGte?: string | null;
     logicalDateLt?: string | null;
     logicalDateLte?: string | null;
+    mapIndex?: Array<(number)>;
     offset?: number;
     operator?: Array<(string)>;
     orderBy?: Array<(string)>;
@@ -2715,6 +2716,7 @@ export type GetTaskInstancesData = {
     logicalDateGte?: string | null;
     logicalDateLt?: string | null;
     logicalDateLte?: string | null;
+    mapIndex?: Array<(number)>;
     offset?: number;
     operator?: Array<(string)>;
     orderBy?: Array<(string)>;
