@@ -291,6 +291,7 @@ class DAGSourceResponse(BaseModel):
     dag_id: Annotated[str, Field(title="Dag Id")]
     version_number: Annotated[int | None, Field(title="Version Number")] = None
     dag_display_name: Annotated[str, Field(title="Dag Display Name")]
+    file_display_name: Annotated[str | None, Field(title="File Display Name")] = None
 
 
 class DAGTagCollectionResponse(BaseModel):
