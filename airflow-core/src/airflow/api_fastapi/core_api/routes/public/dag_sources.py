@@ -61,8 +61,6 @@ def get_dag_source(
 ):
     """Get source code using file token."""
     dag_version = DagVersion.get_version(dag_id, version_number, session=session)
-    file_location = dag_version.dag_code.fileloc
-    file_name = Path(file_location).name if file_location else None
     if not dag_version:
         raise HTTPException(
             status.HTTP_404_NOT_FOUND,
@@ -73,6 +71,8 @@ def get_dag_source(
             status.HTTP_404_NOT_FOUND,
             detail=f"Code not found. dag_id='{dag_id}' version_number='{version_number}'",
         )
+    file_location = dag_version.dag_code.fileloc
+    file_name = Path(file_location).name if file_location else None
     dag_source_model = DAGSourceResponse(
         dag_id=dag_id,
         content=dag_version.dag_code.source_code,
